@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pageTitle: "Auto Repair Shops in Schuylkill County, PA"
+description: "Complete directory of auto repair shops and mechanics in Schuylkill County, Pennsylvania. Phone numbers, ratings, and directions."
+---
+
+<div class="container">
+  {% set breadcrumbs = [{label: "Auto Repair"}] %}
+  {% include "components/breadcrumbs.njk" %}
+
+  <h1>Auto Repair Shops in Schuylkill County</h1>
+  <p class="page-intro">
+    From routine oil changes to engine rebuilds, these are the mechanics keeping Coal Region cars on the road. Browse by city to find a shop near you.
+  </p>
+
+  {% set items = businesses.byCategory["auto-repair"].items %}
+  {% for group in items | by_city %}
+    <div class="city-section">
+      <h2>{{ group.city }}</h2>
+      <div class="card-grid">
+        {% for item in group.items %}
+          {% include "components/listing-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Auto Repair Shops in Schuylkill County, PA",
+  "numberOfItems": {{ items.length }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}{{ item.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

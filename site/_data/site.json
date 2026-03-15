@@ -1,0 +1,14 @@
+{
+  "title": "Coal Region Auto Services Directory",
+  "shortTitle": "Coal Region Auto Services",
+  "description": "Find trusted mechanics, body shops, tire shops, and towing services in Schuylkill County, PA. A free community directory for Coal Region drivers.",
+  "url": "https://coalregionautoservices.com",
+  "county": "Schuylkill County",
+  "state": "Pennsylvania",
+  "region": "Coal Region",
+  "plausibleDomain": "coalregionautoservices.com",
+  "stripe": {
+    "publishableKey": "pk_test_PLACEHOLDER",
+    "buyButtonId": "buy_btn_PLACEHOLDER"
+  }
+}

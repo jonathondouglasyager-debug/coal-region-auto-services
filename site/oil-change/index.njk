@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pageTitle: "Oil Change & Quick Lube in Schuylkill County, PA"
+description: "Find oil change and quick lube services in Schuylkill County, PA. Fast, convenient oil changes and fluid services."
+---
+
+<div class="container">
+  {% set breadcrumbs = [{label: "Oil Change"}] %}
+  {% include "components/breadcrumbs.njk" %}
+
+  <h1>Oil Change & Quick Lube in Schuylkill County</h1>
+  <p class="page-intro">
+    Don't put off that oil change. These quick lube shops get you in and out fast so you can get back on the road.
+  </p>
+
+  {% set items = businesses.byCategory["oil-change"].items %}
+  {% for group in items | by_city %}
+    <div class="city-section">
+      <h2>{{ group.city }}</h2>
+      <div class="card-grid">
+        {% for item in group.items %}
+          {% include "components/listing-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Oil Change Services in Schuylkill County, PA",
+  "numberOfItems": {{ items.length }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}{{ item.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

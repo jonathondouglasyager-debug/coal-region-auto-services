@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pageTitle: "Tire Shops in Schuylkill County, PA"
+description: "Find tire shops in Schuylkill County, PA. Tire sales, rotation, alignment, and balancing services."
+---
+
+<div class="container">
+  {% set breadcrumbs = [{label: "Tire Shops"}] %}
+  {% include "components/breadcrumbs.njk" %}
+
+  <h1>Tire Shops in Schuylkill County</h1>
+  <p class="page-intro">
+    Coal Region roads are tough on tires — potholes, salt, and mountain grades. Find tire shops near you for sales, rotation, alignment, and balancing.
+  </p>
+
+  {% set items = businesses.byCategory["tire-shops"].items %}
+  {% for group in items | by_city %}
+    <div class="city-section">
+      <h2>{{ group.city }}</h2>
+      <div class="card-grid">
+        {% for item in group.items %}
+          {% include "components/listing-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tire Shops in Schuylkill County, PA",
+  "numberOfItems": {{ items.length }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}{{ item.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

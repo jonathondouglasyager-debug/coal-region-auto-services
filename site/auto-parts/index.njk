@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pageTitle: "Auto Parts Stores in Schuylkill County, PA"
+description: "Find auto parts stores, salvage yards, and used parts dealers in Schuylkill County, PA."
+---
+
+<div class="container">
+  {% set breadcrumbs = [{label: "Auto Parts"}] %}
+  {% include "components/breadcrumbs.njk" %}
+
+  <h1>Auto Parts Stores in Schuylkill County</h1>
+  <p class="page-intro">
+    Whether you're a DIY mechanic or need a part for your shop, find new and used auto parts stores across the Coal Region.
+  </p>
+
+  {% set items = businesses.byCategory["auto-parts"].items %}
+  {% for group in items | by_city %}
+    <div class="city-section">
+      <h2>{{ group.city }}</h2>
+      <div class="card-grid">
+        {% for item in group.items %}
+          {% include "components/listing-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Auto Parts Stores in Schuylkill County, PA",
+  "numberOfItems": {{ items.length }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}{{ item.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

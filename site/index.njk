@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+pageTitle: "Mechanics, Body Shops & Auto Services in Schuylkill County, PA"
+description: "Find trusted mechanics, body shops, tire shops, and towing services in Schuylkill County, PA. A free community directory for Coal Region drivers."
+---
+
+<div class="container">
+  <h1>Find Trusted Auto Shops in the Coal Region</h1>
+  <p class="page-intro">
+    Mechanics, body shops, tire shops, and towing services serving Schuylkill County. Every listing verified. No guesswork, no scrolling through national platforms that don't know Pottsville from Pittsburgh.
+  </p>
+
+  {% include "components/featured-listings.njk" %}
+
+  <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+    {% for cat in businesses.categories %}
+      <a href="/{{ cat.slug }}/" class="category-card">
+        <span class="count">{{ cat.items.length }}</span>
+        <span class="label">{{ cat.label }}</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="section">
+    <h2>Browse by City</h2>
+    <div class="city-links">
+      {% for city in businesses.cities %}
+        {% if city.items.length >= 2 %}
+          <a href="#{{ city.slug }}">{{ city.name }} ({{ city.items.length }})</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Why Use This Directory?</h2>
+    <p class="page-intro">
+      National review sites bury small-town shops behind paid ads and SEO tricks. This directory lists every auto service provider in Schuylkill County — from the family shop on Route 61 to the tire center in Tamaqua. Real shops. Real phone numbers. No games.
+    </p>
+    <div class="city-links">
+      <a href="/guides/how-to-find-honest-mechanic-schuylkill-county/">How to Find an Honest Mechanic</a>
+      <a href="/guides/what-to-do-after-car-accident-pa/">What to Do After a Car Accident</a>
+      <a href="/guides/seasonal-car-maintenance-coal-region/">Seasonal Car Maintenance</a>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description }}"
+}
+</script>

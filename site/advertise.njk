@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+pageTitle: "Advertise Your Auto Shop — Coal Region Auto Services"
+description: "Get a featured listing on Coal Region Auto Services. Stand out to drivers searching for mechanics, body shops, and auto services in Schuylkill County, PA."
+---
+
+<div class="container">
+  <div class="advertise-page">
+
+    <h1>Get Found by Drivers Who Need You</h1>
+    <p class="page-intro">
+      Coal Region Auto Services is where Schuylkill County drivers turn when they need a mechanic, body shop, or tow truck.
+      A Featured Listing puts your shop front and center — with photos, testimonials, trust badges, and priority placement on every page where you appear.
+    </p>
+
+    <div class="advertise-comparison">
+      <div class="advertise-tier">
+        <h2>Free Listing</h2>
+        <p class="advertise-price">$0</p>
+        <ul>
+          <li>Business name and address</li>
+          <li>Phone number</li>
+          <li>Link to your website</li>
+          <li>Google rating display</li>
+          <li>Google Maps directions</li>
+        </ul>
+      </div>
+      <div class="advertise-tier advertise-tier-premium">
+        <span class="featured-badge">Recommended</span>
+        <h2>Featured Listing</h2>
+        <p class="advertise-price">$99<span>/month</span></p>
+        <ul>
+          <li>Everything in Free, plus:</li>
+          <li>Photo gallery with lightbox</li>
+          <li>Your story — About Us narrative</li>
+          <li>Customer testimonials</li>
+          <li>Trust & specialty badges</li>
+          <li>Owner/mechanic profile</li>
+          <li>Red "Featured" badge everywhere</li>
+          <li>Priority placement in category & city</li>
+          <li>Featured on the homepage</li>
+        </ul>
+        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <div class="checkout-wrapper plausible-event-name=Checkout+Click">
+          <stripe-buy-button
+            buy-button-id="{{ site.stripe.buyButtonId }}"
+            publishable-key="{{ site.stripe.publishableKey }}"
+          >
+          </stripe-buy-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>The Math</h2>
+      <p class="page-intro">
+        The average auto repair ticket is $500 - $2,000. Body work runs $1,000 - $5,000. A set of tires is $400 - $1,200. One new customer from this directory pays for your listing for months. No contracts — cancel anytime.
+      </p>
+    </div>
+
+    <div class="advertise-cta mt-4">
+      <h2>Questions?</h2>
+      <p>Reach out and we'll walk you through how a Featured Listing can help your shop reach more drivers in the Coal Region.</p>
+      <a href="/contact/" class="btn btn-secondary">Contact Us</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+rank,name,category,city,phone,website,website_quality,has_reviews,digital_gap_score,priority,notes
+1,Wehr's Auto Service Inc,auto_repair,Pottsville,(570) 622-5718,,none,yes_strong,9,high,5-star rating with 42 reviews; no website; AAA/NAPA certified; family owned — perfect premium candidate
+2,Kline Brothers Auto Body Shop,body_shop,Pottsville,(570) 622-3678,,none,no,10,high,In business since 1960; no website; no reviews found — huge digital gap for established business
+3,Foran's Transmission & Auto Repair,auto_repair,Minersville,(570) 544-6509,,none,yes_strong,9,high,5-star rating; transmission specialist; no website — strong reputation with zero online presence
+4,Right Turn Automotive Inc,auto_repair,Tamaqua,(570) 668-0900,http://www.rightturnautomotive.com/,basic,yes_strong,6,high,4.5 stars 59 reviews; AAA/NAPA; website is basic — premium listing would stand out
+5,Gary's Auto Body Inc,body_shop,Pine Grove,(570) 345-6161,https://garysautobodypa.com/,moderate,no,7,high,Full service since 1977; website exists but basic — body shop ROI is $1K-$5K per job
+6,T & T Auto Body and Service,body_shop,Minersville,(570) 544-3391,https://tandtautobodyandservice.com/,moderate,no,6,medium,Body and auto repair; has website but could benefit from premium visibility
+7,Jeck's Service Center,auto_repair,Pine Grove,(570) 345-4300,https://www.jecksservicecenter.com/,moderate,yes_strong,5,medium,4.6 stars 108 reviews; 69 years in business; decent website — premium would boost already strong presence
+8,DME Alignment & Suspension,auto_repair,Pottsville,(570) 728-2473,https://www.dmealignment.com/,good,no,5,medium,Specialist shop with good website; premium listing would drive specialist referrals
+9,Hammers Towing Inc,towing,Pottsville,(570) 544-6350,https://www.hammerstowing.com/,good,no,4,medium,Family owned; decent website; towing ROI is lower but 24/7 visibility matters
+10,Tom's Auto & Marine,body_shop,Tamaqua,(570) 668-5066,https://tomsautobodyrepair.com/,basic,no,7,medium,In business since 1964; website is minimal — body shop premium ROI story is strong

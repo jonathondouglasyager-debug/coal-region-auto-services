@@ -1,0 +1,12 @@
+{
+  "family-owned": { "label": "Family-Owned", "icon": "\ud83c\udfe0" },
+  "ase-certified": { "label": "ASE Certified", "icon": "\ud83d\udee0\ufe0f" },
+  "aaa-approved": { "label": "AAA Approved", "icon": "\u2b50" },
+  "24-7-available": { "label": "24/7 Availability", "icon": "\ud83d\udd50" },
+  "free-estimates": { "label": "Free Estimates", "icon": "\ud83d\udcb0" },
+  "all-makes-models": { "label": "All Makes & Models", "icon": "\ud83d\ude97" },
+  "state-inspection": { "label": "PA State Inspection", "icon": "\u2705" },
+  "loaner-cars": { "label": "Loaner Cars Available", "icon": "\ud83d\ude99" },
+  "napa-auto-care": { "label": "NAPA Auto Care", "icon": "\ud83d\udee1\ufe0f" },
+  "towing-available": { "label": "Towing Available", "icon": "\ud83d\ude9a" }
+}

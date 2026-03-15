@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pageTitle: "Body Shops & Collision Repair in Schuylkill County, PA"
+description: "Find auto body shops and collision repair centers in Schuylkill County, PA. Dent removal, painting, and frame repair."
+---
+
+<div class="container">
+  {% set breadcrumbs = [{label: "Body Shops"}] %}
+  {% include "components/breadcrumbs.njk" %}
+
+  <h1>Body Shops in Schuylkill County</h1>
+  <p class="page-intro">
+    Fender bender or major collision — these body shops have been straightening frames and matching paint for Coal Region drivers for decades. Browse by city to find one near you.
+  </p>
+
+  {% set items = businesses.byCategory["body-shops"].items %}
+  {% for group in items | by_city %}
+    <div class="city-section">
+      <h2>{{ group.city }}</h2>
+      <div class="card-grid">
+        {% for item in group.items %}
+          {% include "components/listing-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Body Shops in Schuylkill County, PA",
+  "numberOfItems": {{ items.length }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ site.url }}{{ item.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
